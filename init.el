@@ -78,6 +78,9 @@
   :config
   (vertico-mode 1))
 
+(use-package posframe
+  :demand t)
+
 (use-package vertico-posframe
   :after vertico
   :config
@@ -95,10 +98,17 @@
   :config
   (setq completion-styles '(orderless)))
 
+(use-package avy
+  :demand t)
+
 (use-package evil
   :demand t
   :config
   (evil-mode 1))
+
+(use-package evil-avy
+  :after (avy evil)
+  :demand t)
 
 (use-package evil-collection
   :after evil
@@ -145,6 +155,9 @@
   :after evil)
 
 (use-package evil-iedit-state
+  :after evil)
+
+(use-package evil-easymotion
   :after evil)
 
 (use-package magit
@@ -198,9 +211,34 @@
   :after tree-sitter
   :demand t)
 
-;(use-package treemacs
-;  :demand t)
+(use-package treesit-auto
+  :demand t
+  :config
+  (global-treesit-auto-mode 1))
 
-;(use-package treemacs-evil
-;  :after (treemacs evil)
-;  :demand t)
+(use-package consult
+  :demand t)
+
+(use-package consult-dir
+  :after consult
+  :demand t)
+
+(use-package consult-company
+  :after consult
+  :demand t)
+
+(use-package yasnippet
+  :demand t
+  :config
+  (yas-global-mode 1))
+
+(use-package lsp-bridge
+  :after yasnippet
+  :elpaca '(lsp-bridge :host github :repo "manateelazycat/lsp-bridge"
+		       :files (:defaults "*.el" "*.py" "acm" "core" "langserver" "multiserver" "resources")
+		       :build (:not compile))
+  :config
+  (global-lsp-bridge-mode))
+
+(use-package flycheck
+  :demand t)
