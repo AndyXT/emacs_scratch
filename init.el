@@ -258,3 +258,14 @@
   :demand t
   :config
   (doom-modeline-mode 1))
+
+(use-package all-the-icons
+  :demand t)
+
+(use-package all-the-icons-nerd-fonts
+  :demand t)
+
+(use-package git-gutter
+  :demand t)
+
+(add-hook 'prog-mode-hook 'git-gutter-mode)
