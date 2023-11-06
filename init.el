@@ -241,4 +241,15 @@
   (global-lsp-bridge-mode))
 
 (use-package flycheck
+  :demand t
+  :config
+  (global-flycheck-mode))
+
+(use-package eshell-toggle
+  :demand t)
+
+(use-package eshell-git-prompt
+  :demand t)
+
+(use-package doom-themes
   :demand t)
