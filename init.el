@@ -253,3 +253,8 @@
 
 (use-package doom-themes
   :demand t)
+
+(use-package doom-modeline
+  :demand t
+  :config
+  (doom-modeline-mode 1))
