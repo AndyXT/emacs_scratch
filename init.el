@@ -269,3 +269,6 @@
   :demand t)
 
 (add-hook 'prog-mode-hook 'git-gutter-mode)
+
+(use-package fzf
+  :demand t)
