@@ -68,9 +68,9 @@
 (elpaca-wait)
 
 (use-package ef-themes
-  :demand t
-  :config
-  (load-theme 'ef-elea-dark t))
+  :demand t)
+  ;; :config
+  ;; (load-theme 'ef-elea-dark t))
 
 (use-package vertico
   :elpaca (:files (:defaults "extensions/*"))
@@ -252,7 +252,9 @@
   :demand t)
 
 (use-package doom-themes
-  :demand t)
+  :demand t
+  :config
+  (load-theme 'doom-gruvbox t))
 
 (use-package doom-modeline
   :demand t
