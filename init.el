@@ -272,3 +272,6 @@
 
 (use-package fzf
   :demand t)
+
+(use-package deadgrep
+  :demand t)
